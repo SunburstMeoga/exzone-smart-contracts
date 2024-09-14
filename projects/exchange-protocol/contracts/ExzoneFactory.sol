@@ -24,10 +24,10 @@ contract ExzoneFactory is IExzoneFactory {
     }
 
     function createPair(address tokenA, address tokenB) external returns (address pair) {
-        require(tokenA != tokenB, 'Pancake: IDENTICAL_ADDRESSES');
+        require(tokenA != tokenB, 'Exzone: IDENTICAL_ADDRESSES');
         (address token0, address token1) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
-        require(token0 != address(0), 'Pancake: ZERO_ADDRESS');
-        require(getPair[token0][token1] == address(0), 'Pancake: PAIR_EXISTS'); // single check is sufficient
+        require(token0 != address(0), 'Exzone: ZERO_ADDRESS');
+        require(getPair[token0][token1] == address(0), 'Exzone: PAIR_EXISTS'); // single check is sufficient
         bytes memory bytecode = type(ExzonePair).creationCode;
         bytes32 salt = keccak256(abi.encodePacked(token0, token1));
         assembly {
@@ -41,12 +41,12 @@ contract ExzoneFactory is IExzoneFactory {
     }
 
     function setFeeTo(address _feeTo) external {
-        require(msg.sender == feeToSetter, 'Pancake: FORBIDDEN');
+        require(msg.sender == feeToSetter, 'Exzone: FORBIDDEN');
         feeTo = _feeTo;
     }
 
     function setFeeToSetter(address _feeToSetter) external {
-        require(msg.sender == feeToSetter, 'Pancake: FORBIDDEN');
+        require(msg.sender == feeToSetter, 'Exzone: FORBIDDEN');
         feeToSetter = _feeToSetter;
     }
 }

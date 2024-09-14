@@ -7,7 +7,7 @@ import "./libraries/SafeMath.sol";
 contract ExzoneERC20 is IExzoneERC20 {
     using SafeMath for uint256;
 
-    string public constant name = "Pancake LPs";
+    string public constant name = "Exzone LPs";
     string public constant symbol = "Cake-LP";
     uint8 public constant decimals = 18;
     uint256 public totalSupply;
@@ -100,7 +100,7 @@ contract ExzoneERC20 is IExzoneERC20 {
         bytes32 r,
         bytes32 s
     ) external {
-        require(deadline >= block.timestamp, "Pancake: EXPIRED");
+        require(deadline >= block.timestamp, "Exzone: EXPIRED");
         bytes32 digest = keccak256(
             abi.encodePacked(
                 "\x19\x01",
@@ -109,7 +109,7 @@ contract ExzoneERC20 is IExzoneERC20 {
             )
         );
         address recoveredAddress = ecrecover(digest, v, r, s);
-        require(recoveredAddress != address(0) && recoveredAddress == owner, "Pancake: INVALID_SIGNATURE");
+        require(recoveredAddress != address(0) && recoveredAddress == owner, "Exzone: INVALID_SIGNATURE");
         _approve(owner, spender, value);
     }
 }
