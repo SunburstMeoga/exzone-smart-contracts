@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity =0.5.16;
 
-import "./interfaces/IPancakeERC20.sol";
+import "./interfaces/IExzoneERC20.sol";
 import "./libraries/SafeMath.sol";
 
-contract PancakeERC20 is IPancakeERC20 {
+contract ExzoneERC20 is IExzoneERC20 {
     using SafeMath for uint256;
 
     string public constant name = "Pancake LPs";

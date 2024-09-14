@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity =0.5.16;
 
-import './interfaces/IPancakeFactory.sol';
-import './PancakePair.sol';
+import './interfaces/IExzoneFactory.sol';
+import './ExzonePair.sol';
 
-contract PancakeFactory is IPancakeFactory {
-    bytes32 public constant INIT_CODE_PAIR_HASH = keccak256(abi.encodePacked(type(PancakePair).creationCode));
+contract ExzoneFactory is IExzoneFactory {
+    bytes32 public constant INIT_CODE_PAIR_HASH = keccak256(abi.encodePacked(type(ExzonePair).creationCode));
 
     address public feeTo;
     address public feeToSetter;
@@ -28,12 +28,12 @@ contract PancakeFactory is IPancakeFactory {
         (address token0, address token1) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
         require(token0 != address(0), 'Pancake: ZERO_ADDRESS');
         require(getPair[token0][token1] == address(0), 'Pancake: PAIR_EXISTS'); // single check is sufficient
-        bytes memory bytecode = type(PancakePair).creationCode;
+        bytes memory bytecode = type(ExzonePair).creationCode;
         bytes32 salt = keccak256(abi.encodePacked(token0, token1));
         assembly {
             pair := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
-        IPancakePair(pair).initialize(token0, token1);
+        IExzonePair(pair).initialize(token0, token1);
         getPair[token0][token1] = pair;
         getPair[token1][token0] = pair; // populate mapping in the reverse direction
         allPairs.push(pair);

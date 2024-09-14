@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
+pragma solidity ^0.8.20;
 
 import "./IBEP20.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
