@@ -492,7 +492,7 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
@@ -522,20 +522,12 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"@openzeppelin/contracts/utils/math/SafeMath.sol": {
-			"keccak256": "0x58b21219689909c4f8339af00813760337f7e2e7f169a97fe49e2896dcfb3b9a",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://ef8e012e946dec20e59f2d4446f4b44bb098f3fa8bac103b1b5112fff777447b",
-				"dweb:/ipfs/QmVTooKWcLkJ9W68yNX4MgdrbAKiAXwuRN9A7f4NkdcdtQ"
-			]
-		},
 		"projects/bsc-library/contracts/BEP20.sol": {
-			"keccak256": "0x284456564fe926020b6296a3bfbb0a0d981f14fd9051175fc1a7f48cac73b4bc",
+			"keccak256": "0x23f52d36147d59edd08854e45d28e9bb820ff959125ac569d7415b2f3bd87516",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://44f7e7c9d54e48d711d50a039efd7129d446b1732b5729a9aaf7c3440be36c12",
-				"dweb:/ipfs/QmcxZsNmb6SLKgTWdiUpnAK6dgyYGyeReBNNGThghdz52n"
+				"bzz-raw://2fd2560eefe99dd4900223d79e12d9abc6ef58cf0efe3049c5fb101974d3403c",
+				"dweb:/ipfs/Qme652ZjCsZGkBDmQhTkLBdy6P4ZJk7msKoaWRKae5Fr6v"
 			]
 		},
 		"projects/bsc-library/contracts/IBEP20.sol": {
